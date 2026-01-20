@@ -18,9 +18,9 @@ This project provides a professional, automated way to manage macOS Finder tags.
 If you just want to run it immediately on any Mac, paste this into your terminal:
 
 ```zsh
-curl -s https://raw.githubusercontent.com/YOUR_USERNAME/macos-tag-manager/main/tagger.sh | zsh
+curl -s https://raw.githubusercontent.com/683280yj/macos-tag-manager/main/tagger.sh | zsh
 ```
-*(Note: Replace `YOUR_USERNAME` with your actual GitHub username after pushing.)*
+*(Note: This command directly runs the tagging script from the main branch.)*
 
 ---
 
@@ -40,7 +40,7 @@ curl -s https://raw.githubusercontent.com/YOUR_USERNAME/macos-tag-manager/main/t
 
 1.  **Clone the Repo**:
     ```zsh
-    git clone https://github.com/YOUR_USERNAME/macos-tag-manager.git
+    git clone https://github.com/683280yj/macos-tag-manager.git
     cd macos-tag-manager
     ```
 
