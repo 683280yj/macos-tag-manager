@@ -1,67 +1,87 @@
 # 🍏 macOS Semantic Tag Manager
 
-> **Turn your messy Home directory into a structured "Column-Based" workspace in 10 seconds.**
+[English](./README.md) | [简体中文](./README_CN.md)
 
-This project provides a professional, automated way to manage macOS Finder tags. It categorizes your files not by where they are, but by **how you use them**.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![macOS](https://img.shields.io/badge/platform-macOS-000000.svg?logo=apple&logoColor=white)]()
+
+> **"Folders are physical. Tags are logical."**
+> Turn your messy Home directory into a structured, semantic workspace in seconds.
 
 ---
 
-## 🌟 Features
+## 🌟 Why this exists?
 
--   **Semantic Aggregation**: Group related files (like `.zshrc`, `.p10k.zsh`, `oh-my-zsh`) under a single `Terminal-Env` tag.
--   **Frequency Focus**: Use the `⭐` tag to highlight active AI Agents and Projects.
--   **Clean Workspace**: One-click cleanup of your home directory's visual clutter in Finder.
--   **AI-Ready**: Designed for users who work with LLM frameworks, Agents, and modern dev tools.
+In a modern developer workflow, files are scattered across your Home directory: `.zshrc` in the root, projects in `~/git`, AI configs in `~/.agent`. Moving them into subfolders often breaks paths and scripts.
 
-## 🚀 One-Line "Magic" (Dummy-Proof)
+**macOS Semantic Tag Manager** solves this by using Finder Tags. It groups your files by **context** rather than location, allowing you to access everything related to a task (e.g., "Terminal Environment") with a single click in the Finder sidebar.
 
-If you just want to run it immediately on any Mac, paste this into your terminal:
+## 🚀 Quick Start (One-Line Magic)
+
+Run this immediately to tag your system using the default logic:
 
 ```zsh
 curl -s https://raw.githubusercontent.com/683280yj/macos-tag-manager/main/tagger.sh | zsh
 ```
-*(Note: This command directly runs the tagging script from the main branch.)*
 
 ---
 
-## 📂 The Tagging Logic
+## 📂 Semantic Logic
+
+The script uses a sophisticated mapping to categorize your workspace:
 
 | Tag | Strategy | Includes |
 | :--- | :--- | :--- |
-| **`⭐`** | **High Frequency** | Active Git repos, AI Agents, Zotero |
-| **`AI-Workspace`** | **AI Context** | Claude, Gemini, Agent Frameworks |
-| **`Terminal-Env`** | **Background Config** | Zsh, Bash, p10k, iTerm2 settings |
-| **`Dev-Core`** | **Infrastructure** | Docker, OrbStack, Git Config, npm |
-| **`Editor-IDE`** | **Tools** | VS Code, LaTeX environments |
+| **`⭐`** | **High Frequency** | Primary Workspace, Active Repos, Zotero |
+| **`AI-Workspace`** | **AI Context** | Claude, Gemini, Agent Frameworks, AI Configs |
+| **`Terminal-Env`** | **Infrastructure** | Zsh, Bash, p10k, iTerm2 configurations |
+| **`Dev-Core`** | **Development** | Docker, OrbStack, Git Config, npm, git directory |
+| **`Editor-IDE`** | **Tools** | VS Code, Cursor, LaTeX, IDE Settings |
+| **`Research-Acad`** | **Knowledge** | Zotero, Academic papers, Stata |
 
 ---
 
-## 🛠️ Manual Installation & Customization
+## 🛠️ Customization
 
-1.  **Clone the Repo**:
+1.  **Clone the Repository**:
     ```zsh
     git clone https://github.com/683280yj/macos-tag-manager.git
     cd macos-tag-manager
     ```
 
-2.  **Customize the Mapping**:
-    Open `tagger.sh` and edit the `TAG_MAP` associative array. You can add your own folders or change the tag names.
+2.  **Edit the Mapping**:
+    Open `tagger.sh` and modify the `TAG_MAP` associative array. 
+    ```zsh
+    declare -A TAG_MAP=(
+        ["$HOME/MyProject"]="Development,⭐"
+        ["$HOME/SecretData"]="Hidden,Private"
+    )
+    ```
 
-3.  **Run it**:
+3.  **Run Locally**:
     ```zsh
     chmod +x tagger.sh
     ./tagger.sh
     ```
 
+## 🤖 AI-Powered Mapping
+
+Want a custom mapping based on *your* specific files? 
+Use the pre-built prompt in [AI_PROMPT.md](./AI_PROMPT.md) to have Claude or ChatGPT generate a perfect `TAG_MAP` for your directory structure.
+
 ---
 
-## 🧠 Why use this instead of folders?
+## 🧩 Requirements
 
-Folders are physical. Tags are **logical**. 
-With this system, your `.zshrc` can stay in your home directory (where it belongs), but you can find it instantly alongside your `iTerm2` configs by clicking the **Terminal-Env** tag in your Finder sidebar.
+-   **macOS** (tested on Sonoma/Sequoia)
+-   **Homebrew**
+-   **tag** utility (automatically installed via `brew install tag` if missing)
+
+---
 
 ## 🤝 Contributing
-If you have a better categorization for common developer tools, feel free to submit a PR!
+
+Contributions are welcome! If you have a better categorization for common developer tools or want to add support for more apps, feel free to submit a Pull Request.
 
 ---
-*Developed with love for the macOS Power User community.*
+*Crafted for the macOS Power User.*

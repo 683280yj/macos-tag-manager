@@ -1,5 +1,7 @@
 # 🤖 AI Customization Prompt
 
+> ⚠️ **Privacy Tip**: Before pasting your file list, you may want to remove any sensitive folder or file names that you don't want the AI model to see.
+
 If you want an AI (like Claude or ChatGPT) to customize your `tagger.sh` mapping based on your specific files, copy and paste the following prompt:
 
 ---

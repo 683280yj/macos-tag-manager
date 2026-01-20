@@ -6,6 +6,12 @@
 # Description: Automatically categories Mac home folders using Finder Tags.
 # ==============================================================================
 
+# --- 0. OS Check ---
+if [[ "$OSTYPE" != "darwin"* ]]; then
+    echo "❌ This script is designed for macOS Finder Tags and only works on macOS."
+    exit 1
+fi
+
 # --- 1. Environment Check & Tool Installation ---
 echo "🔍 Checking environment..."
 
@@ -37,9 +43,7 @@ T_IDE="Editor-IDE"
 
 declare -A TAG_MAP=(
     # --- AI & Agent Workflow (The High Priority) ---
-    ["$HOME/SuperClaude_Framework"]="$T_AI"
-    ["$HOME/Claudix"]="$T_AI"
-    ["$HOME/conductor"]="$T_AI"
+    ["$HOME/AI_Projects"]="$T_AI"
     ["$HOME/.claude.json"]="AI-Config"
     ["$HOME/.gemini"]="AI-Config"
     ["$HOME/.agent"]="$T_AI"
@@ -48,19 +52,19 @@ declare -A TAG_MAP=(
     ["$HOME/.zshrc"]="$T_ENV"
     ["$HOME/.oh-my-zsh"]="$T_ENV"
     ["$HOME/.p10k.zsh"]="$T_ENV"
-    ["$HOME/powerlevel10k"]="$T_ENV"
     ["$HOME/.bash_history"]="$T_ENV"
     
     # --- Development ---
+    ["$HOME/Developer"]="$T_DEV,⭐"
     ["$HOME/git"]="$T_DEV,⭐"
     ["$HOME/.vscode"]="$T_IDE"
     ["$HOME/.docker"]="$T_DEV"
     ["$HOME/.orbstack"]="$T_DEV,Container"
     ["$HOME/.gitconfig"]="Git-Config"
     
-    # --- Academic ---
+    # --- Knowledge & Research ---
     ["$HOME/Zotero"]="$T_ACAD,⭐"
-    ["$HOME/stata-mcp"]="$T_ACAD"
+    ["$HOME/Papers"]="$T_ACAD"
     
     # --- Standard macOS ---
     ["$HOME/Downloads"]="$T_STD"
@@ -69,17 +73,16 @@ declare -A TAG_MAP=(
     ["$HOME/Pictures"]="$T_STD"
     ["$HOME/Music"]="$T_STD"
     ["$HOME/Movies"]="$T_STD"
-    ["$HOME/Public"]="$T_STD"
 )
 
 # --- 3. Execution ---
 echo "🚀 Applying semantic tags to your Home directory..."
 
-for path in "${(@k)TAG_MAP}"; do
-    if [[ -e "$path" ]]; then
+for item_path in "${(@k)TAG_MAP}"; do
+    if [[ -e "$item_path" ]]; then
         # Use -s to set tags (replaces existing tags for a clean state)
-        "$TAG_BIN" -s "${TAG_MAP[$path]}" "$path"
-        echo "✅ [${TAG_MAP[$path]}] -> $path"
+        "$TAG_BIN" -s "${TAG_MAP[$item_path]}" "$item_path"
+        echo "✅ [${TAG_MAP[$item_path]}] -> $item_path"
     else
         # Silent skip for folders that don't exist on this specific machine
         continue
