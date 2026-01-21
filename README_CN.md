@@ -3,7 +3,12 @@
 [English](./README.md) | [简体中文](./README_CN.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![macOS](https://img.shields.io/badge/platform-macOS-000000.svg?logo=apple&logoColor=white)]()
+[![macOS](https://img.shields.io/badge/platform-macOS-000000.svg?logo=apple&logoColor=white)](https://www.apple.com/cn/macos/)
+[![GitHub stars](https://img.shields.io/github/stars/683280yj/macos-tag-manager?style=social)](https://github.com/683280yj/macos-tag-manager/stargazers)
+
+## ⭐ Star 趋势
+
+[![Star History Chart](https://api.star-history.com/svg?repos=683280yj/macos-tag-manager&type=Date)](https://star-history.com/#683280yj/macos-tag-manager&Date)
 
 > **“文件夹是物理单位，标签是逻辑单位。”**
 > 在几秒钟内，将你混乱的用户主目录转变为结构化的语义工作区。
@@ -16,13 +21,31 @@
 
 **macOS 语义标签管理器** 通过 Finder 标签（Tags）解决了这个问题。它根据 **上下文** 而非位置对文件进行分组，让你只需在 Finder 侧边栏点击一下，即可访问与任务相关的所有内容（例如“终端环境”）。
 
-## 🚀 快速开始（一行代码搞定）
+## 🚀 快速开始
 
-直接运行以下命令，使用默认逻辑为你的系统打标签：
+### 方式一：语义化标签（开发者推荐）
+
+按上下文（终端、AI、开发等）为主目录文件打标签：
 
 ```zsh
 curl -s https://raw.githubusercontent.com/683280yj/macos-tag-manager/main/tagger.sh | zsh
 ```
+
+### 方式二：智能整理系统（基于使用频次）🔥 新功能
+
+根据**使用频次**自动整理文件，使用 Emoji 可视化标签：
+
+```zsh
+curl -s https://raw.githubusercontent.com/683280yj/macos-tag-manager/main/smart_organize.sh | zsh
+```
+
+功能特性：
+- 🔥 自动识别高频文件（最近 7 天访问）
+- 📚 智能分类学术论文、工作文档、媒体素材
+- 🗑️ 识别可删除的临时文件和系统垃圾
+- 🎨 Emoji 可视化标签，一目了然
+
+👉 [了解智能整理系统详情](./SMART_ORGANIZE.md)
 
 ---
 
@@ -84,4 +107,28 @@ curl -s https://raw.githubusercontent.com/683280yj/macos-tag-manager/main/tagger
 欢迎贡献！如果你对常用开发工具有更好的分类建议，或者想增加对更多应用的支持，请随时提交 Pull Request。
 
 ---
-*为 macOS 进阶用户精心打造。*
+
+## 🙏 致谢
+
+本项目站在巨人的肩膀上：
+
+- **[Homebrew](https://brew.sh/zh-cn/)** - 让 macOS 开发成为可能的必备包管理器
+- **[tag](https://github.com/jdberry/tag)** - 驱动我们标签系统的出色命令行工具
+- **[Oh My Zsh](https://ohmyz.sh)** - 让终端定制变得愉悦
+- **[Powerlevel10k](https://github.com/romkatv/powerlevel10k)** - 启发语义化组织的精美提示符
+- **macOS Finder** - 强大的原生标签系统
+- **开源社区** - 持续的灵感和协作
+
+特别感谢所有帮助改进文件组织工作流程的贡献者！
+
+---
+
+## 📊 项目统计
+
+![GitHub repo size](https://img.shields.io/github/repo-size/683280yj/macos-tag-manager)
+![GitHub last commit](https://img.shields.io/github/last-commit/683280yj/macos-tag-manager)
+![GitHub issues](https://img.shields.io/github/issues/683280yj/macos-tag-manager)
+
+---
+
+*为 macOS 进阶用户精心打造。用 ❤️ 为开发者社区创作。*
