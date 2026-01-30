@@ -64,7 +64,32 @@ curl -s https://raw.githubusercontent.com/683280yj/macos-tag-manager/main/smart_
 
 ---
 
+## 📚 示例配置
+
+**新功能！** 不知道从哪里开始？查看我们为不同职业准备的**[开箱即用示例](./examples/)**：
+
+- 👨‍💻 **[全栈开发者](./examples/developer_config.sh)** - 多项目管理、开发工具、容器
+- 🔬 **[学术研究人员](./examples/researcher_config.sh)** - 论文、数据分析、LaTeX、文献
+- 🎨 **[创意设计师](./examples/designer_config.sh)** - 设计素材、客户项目、灵感库
+- 🤖 **[数据科学家](./examples/datascientist_config.sh)** - 数据集、模型、笔记本、MLOps
+
+👉 [浏览所有示例并学习如何定制 →](./examples/README.md)
+
+---
+
 ## 🛠️ 自定义
+
+### 方式一：使用示例（推荐）
+
+从经过验证的配置开始：
+```zsh
+git clone https://github.com/683280yj/macos-tag-manager.git
+cd macos-tag-manager
+chmod +x examples/developer_config.sh  # 选择你的示例
+./examples/developer_config.sh
+```
+
+### 方式二：手动自定义
 
 1.  **克隆仓库**:
     ```zsh
@@ -87,10 +112,10 @@ curl -s https://raw.githubusercontent.com/683280yj/macos-tag-manager/main/smart_
     ./tagger.sh
     ```
 
-## 🤖 AI 驱动的映射生成
+### 方式三：AI 驱动的映射生成
 
 想要根据你*特定*的文件列表生成自定义映射吗？
-使用 [AI_PROMPT.md](./AI_PROMPT.md) 中预设的提示词，让 Claude 或 ChatGPT 为你的目录结构生成完美的 `TAG_MAP`。
+使用 [AI_PROMPT.md](./AI_PROMPT.md)中预设的提示词，让 Claude 或 ChatGPT 为你的目录结构生成完美的 `TAG_MAP`。
 
 ---
 
