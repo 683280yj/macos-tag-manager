@@ -64,7 +64,32 @@ The script uses a sophisticated mapping to categorize your workspace:
 
 ---
 
+## 📚 Example Configurations
+
+**New!** Don't know where to start? Check out our **[ready-to-use examples](./examples/)** for different professions:
+
+- 👨‍💻 **[Full-Stack Developer](./examples/developer_config.sh)** - Multi-project management, dev tools, containers
+- 🔬 **[Academic Researcher](./examples/researcher_config.sh)** - Papers, data analysis, LaTeX, literature
+- 🎨 **[Creative Designer](./examples/designer_config.sh)** - Design assets, client projects, inspiration
+- 🤖 **[Data Scientist](./examples/datascientist_config.sh)** - Datasets, models, notebooks, MLOps
+
+👉 [Browse all examples and learn how to customize them →](./examples/README.md)
+
+---
+
 ## 🛠️ Customization
+
+### Option 1: Use an Example (Recommended)
+
+Start with a proven configuration:
+```zsh
+git clone https://github.com/683280yj/macos-tag-manager.git
+cd macos-tag-manager
+chmod +x examples/developer_config.sh  # Choose your example
+./examples/developer_config.sh
+```
+
+### Option 2: Manual Customization
 
 1.  **Clone the Repository**:
     ```zsh
@@ -87,7 +112,7 @@ The script uses a sophisticated mapping to categorize your workspace:
     ./tagger.sh
     ```
 
-## 🤖 AI-Powered Mapping
+### Option 3: AI-Powered Mapping
 
 Want a custom mapping based on *your* specific files? 
 Use the pre-built prompt in [AI_PROMPT.md](./AI_PROMPT.md) to have Claude or ChatGPT generate a perfect `TAG_MAP` for your directory structure.
